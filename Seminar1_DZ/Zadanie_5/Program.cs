@@ -6,13 +6,17 @@
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());   // Имя переменной было выбрано не из условия, так что бы оно несло смысл, имя "N" я счел неуместным))
 
-int lengh = 0;
-
 int count = 1;
  
-while (lengh != number)     // Этим циклом я заменяю функцию lengh(), так как мы ее не проходили)
+while (count <= number)     
 {
-    lengh++;
+    if (count % 2 == 0)
+    {
+        Console.Write(count);
+        if (count < number - 1)     // Дополнительное ветвление, чтобы убрать лишнюю запятую)
+        {
+        Console.Write(", ");
+        }      
+    }
+    count += 1;
 }
-Console.WriteLine(lengh);
-
