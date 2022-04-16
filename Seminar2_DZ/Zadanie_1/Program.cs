@@ -14,11 +14,11 @@ Console.WriteLine($"Вторая цифра числа {number}: {secondDigit}")
 
 int FindSecondDigit(int digits)
 {
-    while(count != 2)
+    while (count != 2)
     {
         lastDigit = digits % 10;
         digits = digits / 10;
-        count++;         
+        count++;
     }
     return lastDigit;
 }
