@@ -7,6 +7,12 @@ int tryes = 3;  // Количество потыток
 int minNumber = 1; // Нижний порог числа
 int maxNumber = 1000;   // Верхний порог числа
 
+while (tryes != 0)
+{
+    StartGame();
+    Guess();
+}
+
 Console.WriteLine($"Привет! Давай сыграем в угадайку! Я загадаю число от {minNumber} до {maxNumber}, а ты его угадаешь!");
 Console.WriteLine($"Но помни, у тебя только {tryes} попытки. Поехали!");
 
@@ -15,8 +21,6 @@ string userName = Console.ReadLine();
 
 int number = new Random().Next(minNumber, maxNumber + 1);
 Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
-
-Guess();
 
 void Guess()
 {
@@ -56,22 +60,32 @@ void Continue()
     string answer = Console.ReadLine();
     if (answer == "y")
     {
-        Game();
+        StartGame();
     }
 }
 
-void Game()
+int StartGame()
 {
     int tryes = 3;
 
     Console.WriteLine($"Привет! Давай сыграем в угадайку! Я загадаю число от {minNumber} до {maxNumber}, а ты его угадаешь!");
     Console.WriteLine($"Но помни, у тебя только {tryes} попытки. Поехали!");
 
+    int number = new Random().Next(minNumber, maxNumber + 1);
+    return number;
+    Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
+}
+
+string UserName()
+{
     Console.WriteLine("Введите имя: ");
     string userName = Console.ReadLine();
+    return userName;
+}
 
+int NumberRand()
+{
     int number = new Random().Next(minNumber, maxNumber + 1);
+    return number;
     Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
-
-    Guess();
 }
