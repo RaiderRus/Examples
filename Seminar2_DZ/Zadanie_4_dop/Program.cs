@@ -7,20 +7,21 @@ int tryes = 3;  // Количество потыток
 int minNumber = 1; // Нижний порог числа
 int maxNumber = 1000;   // Верхний порог числа
 
+string userName = "";
+int number = 0;
+
 while (tryes != 0)
 {
-    StartGame();
+    number = StartGame(number);
+    userName = UserName(userName);
     Guess();
+    Console.WriteLine($"Хочешь попробовать сыграть еще раз? y/n: ");
+    string answer = Console.ReadLine();
+    if (answer == "y")
+    {
+        tryes = 3;
+    }
 }
-
-Console.WriteLine($"Привет! Давай сыграем в угадайку! Я загадаю число от {minNumber} до {maxNumber}, а ты его угадаешь!");
-Console.WriteLine($"Но помни, у тебя только {tryes} попытки. Поехали!");
-
-Console.WriteLine("Введите имя: ");
-string userName = Console.ReadLine();
-
-int number = new Random().Next(minNumber, maxNumber + 1);
-Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
 
 void Guess()
 {
@@ -43,6 +44,7 @@ void Guess()
         if (userNumber == number)
         {
             Console.WriteLine($"Вы угадали {userName}! {userNumber} - загаданное число!");
+            tryes++;    // Счетчик увеличивается, чтобы не выводить надпись Game Over в случае победы с поледней попытки)
             break;
         }
     }
@@ -50,21 +52,10 @@ void Guess()
     if (tryes == 0)
     {
         Console.WriteLine($"Попытки закончились! Game over!");
-        Continue();
     }
 }
 
-void Continue()
-{
-    Console.WriteLine($"Хочешь попробовать сыграть еще раз? y/n: ");
-    string answer = Console.ReadLine();
-    if (answer == "y")
-    {
-        StartGame();
-    }
-}
-
-int StartGame()
+int StartGame(int num)
 {
     int tryes = 3;
 
@@ -72,20 +63,13 @@ int StartGame()
     Console.WriteLine($"Но помни, у тебя только {tryes} попытки. Поехали!");
 
     int number = new Random().Next(minNumber, maxNumber + 1);
-    return number;
     Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
+    return number;
 }
 
-string UserName()
+string UserName(string name)
 {
     Console.WriteLine("Введите имя: ");
     string userName = Console.ReadLine();
     return userName;
-}
-
-int NumberRand()
-{
-    int number = new Random().Next(minNumber, maxNumber + 1);
-    return number;
-    Console.WriteLine(number);  // Понятно, что пользователь не должен видеть загаданное число, но данная строка необходима для проверки.
 }
