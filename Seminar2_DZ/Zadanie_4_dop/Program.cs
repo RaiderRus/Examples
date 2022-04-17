@@ -21,6 +21,11 @@ while (tryes != 0)
     {
         tryes = 3;
     }
+    if (answer == "n")
+    {
+        Console.WriteLine($"До свидания, {userName}!");
+        break;
+    }
 }
 
 void Guess()
@@ -59,7 +64,7 @@ int StartGame(int num)
 {
     int tryes = 3;
 
-    Console.WriteLine($"Привет! Давай сыграем в угадайку! Я загадаю число от {minNumber} до {maxNumber}, а ты его угадаешь!");
+    Console.WriteLine($"Привет! Давай сыграем в угадайку? Я загадаю число от {minNumber} до {maxNumber}, а ты его угадаешь!");
     Console.WriteLine($"Но помни, у тебя только {tryes} попытки. Поехали!");
 
     int number = new Random().Next(minNumber, maxNumber + 1);
