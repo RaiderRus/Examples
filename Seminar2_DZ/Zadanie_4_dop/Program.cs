@@ -21,7 +21,7 @@ while (tryes != 0)
     {
         tryes = 3;
     }
-    if (answer == "n")
+    else
     {
         Console.WriteLine($"До свидания, {userName}!");
         break;
