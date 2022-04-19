@@ -1,5 +1,7 @@
 ﻿Console.Write("X: ");
-int quarterNumber = Convert.ToInt32(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("X: ");
+int y = Convert.ToInt32(Console.ReadLine());
 
 if (x == 0 || y == 0)
 {
