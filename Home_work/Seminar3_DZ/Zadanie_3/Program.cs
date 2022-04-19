@@ -3,13 +3,13 @@
 // 5 -> 1, 8, 27, 64, 125
 
 Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
+int number = Convert.ToInt32(Console.ReadLine());
 int count = 1;
 
-while (count <= n)
+while (count <= number)
 {
     Console.Write(Math.Pow(count, 3));
-    if (count < n)     // Дополнительное ветвление, чтобы убрать лишнюю запятую)
+    if (count < number)     // Дополнительное ветвление, чтобы убрать лишнюю запятую)
     {
         Console.Write(", ");
     }
