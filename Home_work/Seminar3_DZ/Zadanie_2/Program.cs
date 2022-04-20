@@ -17,4 +17,4 @@ double Coordinate(string coordName, string pointName)   // Идея для фу�
 
 double distance = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
 
-Console.WriteLine($"Расстояние между точками равно {distance}");
+Console.WriteLine($"Расстояние между точками равно {Math.Round(distance, 2)}");     // Не уверен, что можно использовать Math.Round(), но с ней как то лучше ответ смотрится)
