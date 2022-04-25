@@ -5,7 +5,7 @@
 Console.Write("Введите число: ");
 double numberA = Convert.ToDouble(Console.ReadLine());      // именование в данном случае без смысла, но согласно условию)
 Console.Write("Введите степень: ");
-int numberB = Convert.ToInt32(Console.ReadLine());
+double numberB = Convert.ToInt32(Console.ReadLine());
 
 Pow(numberA, numberB);
 
