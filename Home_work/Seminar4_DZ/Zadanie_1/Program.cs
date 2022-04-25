@@ -3,12 +3,20 @@
 // 2, 4 -> 16
 
 Console.Write("Введите число: ");
-double numberA = Convert.ToDouble(Console.ReadLine());
-double pow = 1;
+double numberA = Convert.ToDouble(Console.ReadLine());      // именование в данном случае без смысла, но согласно условию)
 Console.Write("Введите степень: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
-for (int i = 0; i < numberB; i++)
+
+Pow(numberA, numberB);
+
+double Pow(double num, double degree)       // в функции я уже использовал именование, несущее смысл
 {
-    pow *= numberA;
+    double pow = 1;
+
+    for (int i = 0; i < degree; i++)
+    {
+        pow *= num;
+    }
+    Console.WriteLine(pow);
+    return pow;
 }
-Console.WriteLine(pow);
