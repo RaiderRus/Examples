@@ -5,13 +5,18 @@
 
 Console.Write("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int total = 0;
 
-while (number != 0)
+SumDigit(number);
+
+int SumDigit(int num)
 {
-    int lastDigit = number % 10;    // вычисляем последнюю цифру числа
-    total += lastDigit;             // суммируем ее с переменной total
-    number = number / 10;           // отрезаем у числа одну цифру
+    int total = 0;
+    while (num != 0)
+    {
+        int lastDigit = num % 10;    // вычисляем последнюю цифру числа
+        total += lastDigit;             // суммируем ее с переменной total
+        num = num / 10;           // отрезаем у числа одну цифру
+    }
+    Console.WriteLine(total);
+    return total;
 }
-
-Console.WriteLine(total);
