@@ -12,7 +12,7 @@ int a = 0;
 
 for (int i = 0; i < numbers.Length; i++)
 {
-    if (numbers[i] >= 10 && numbers[i] <= 99)
+    if (numbers[i] >= 20 && numbers[i] <= 99)
     {
         a++;
     }
@@ -24,8 +24,8 @@ void FillArray(int[] array)
     for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().Next(-99, 200);
+        Console.Write(array[i] + " ");
     }
-    Console.Write(array);
 }
 
 
