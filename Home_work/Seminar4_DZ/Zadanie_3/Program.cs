@@ -5,39 +5,54 @@
 // В оригинале нужно пользователю ввести строку - ряд чисел через запятую, 
 // а программа превращает эту строку в полноценный массив и выводит. Рекомендую вторым вариантом)
 
-Console.WriteLine("Введите числа через запятую: ");
+Console.Write("Введите числа через запятую: ");
 string strNumbers = Console.ReadLine();
 
-string strArray = String.Empty;
+int countChar = 1;
 
-string[] arrayNumbers = new string[8];
-
-RemoveChar(strNumbers);
-// FillArray(arrayNumbers);
+CountNumbers(strNumbers);
+int[] arrayNumbers = new int[countChar];
+FillArray(strNumbers);
 PrintArray(arrayNumbers);
 
-string RemoveChar(string list)
+void CountNumbers(string numbers)
 {
-    for (int i = 0; i < list.Length; i++)
+    for (int i = 0; i < numbers.Length; i++)
     {
-        if (list[i] != ',' || list[i] != ' ')
+        if (numbers[i] == ',')
         {
-            strArray = strArray + list[i];
+            countChar++;
         }
     }
-    Console.WriteLine(strArray);
-    return strArray;
 }
 
-// void FillArray(string[] list)
-// {
-//     for (int i = 0; i < strArray.Length; i++)
-//     {
-//         arrayNumbers[i] = strNumbers[i];
-//     }
-// }
+void FillArray(string numbers)
+{
+    int index = 0;
 
-void PrintArray(string[] array)
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        string strToIntArray = String.Empty;
+
+        while (numbers[i] != ',')
+        {
+            if (i != numbers.Length - 1)
+            {
+                strToIntArray += Convert.ToString(numbers[i]);
+                i++;
+            }
+            else
+            {
+                strToIntArray += Convert.ToString(numbers[i]);
+                break;
+            }
+        }
+        arrayNumbers[index] = Convert.ToInt32(strToIntArray);
+        index++;
+    }
+}
+
+void PrintArray(int[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -49,5 +64,4 @@ void PrintArray(string[] array)
         }
     }
     Console.Write("]");
-    Console.WriteLine();
 }
