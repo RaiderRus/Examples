@@ -24,6 +24,16 @@ void CountNumbers(string numbers)
             countChar++;
         }
     }
+    if (countChar > 8)
+    {
+        Console.WriteLine($"Вы ввели на {countChar - 8} чисел больше, чем задано условием!");
+        Console.WriteLine("Но так и быть, любуйтесь результатом:");
+    }
+    if (countChar < 8)
+    {
+        Console.WriteLine($"Вы ввели на {8 - countChar} чисел меньше, чем задано условием!");
+        Console.WriteLine("Но так и быть, любуйтесь результатом:");
+    }
 }
 
 void FillArray(string numbers)
@@ -58,7 +68,7 @@ void PrintArray(int[] array)
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i]);
-        if (i < array.Length - 1)     // Дополнительное ветвление, чтобы убрать лишнюю запятую)
+        if (i < array.Length - 1)
         {
             Console.Write(", ");
         }
