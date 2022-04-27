@@ -5,20 +5,39 @@
 // В оригинале нужно пользователю ввести строку - ряд чисел через запятую, 
 // а программа превращает эту строку в полноценный массив и выводит. Рекомендую вторым вариантом)
 
-int[] numbers = new int[8];
-FillArray(numbers);
-PrintArray(numbers);
+Console.WriteLine("Введите числа через запятую: ");
+string strNumbers = Console.ReadLine();
 
-void FillArray(int[] array)
+string strArray = String.Empty;
+
+string[] arrayNumbers = new string[8];
+
+RemoveChar(strNumbers);
+// FillArray(arrayNumbers);
+PrintArray(arrayNumbers);
+
+string RemoveChar(string list)
 {
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < list.Length; i++)
     {
-        Console.Write("Введите элемент массива № " + (i + 1) + ": ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        if (list[i] != ',' || list[i] != ' ')
+        {
+            strArray = strArray + list[i];
+        }
     }
+    Console.WriteLine(strArray);
+    return strArray;
 }
 
-void PrintArray(int[] array)
+// void FillArray(string[] list)
+// {
+//     for (int i = 0; i < strArray.Length; i++)
+//     {
+//         arrayNumbers[i] = strNumbers[i];
+//     }
+// }
+
+void PrintArray(string[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
