@@ -45,5 +45,5 @@ void PositiveNumbers(int[] array)
             count++;
         }
     }
-    Console.WriteLine($"Введено {count} положительных числа.");
+    Console.WriteLine($"Введено {count} положительных чисел.");
 }
