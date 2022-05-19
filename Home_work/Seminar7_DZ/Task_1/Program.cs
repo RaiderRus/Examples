@@ -8,9 +8,7 @@ int m = NumberCheck("Введите количество строк");
 int n = NumberCheck("Введите количество столбцов");
 Random random = new Random();
 
-double[,] arrayTable = new double[m, n];
-
-FillArray(arrayTable);
+double[,] arrayTable = FillArray(m, n);
 PrintArray(arrayTable);
 
 int NumberCheck(string text)
@@ -25,24 +23,30 @@ int NumberCheck(string text)
     return number;
 }
 
-void FillArray(double[,] array)
+double[,] FillArray(int m, int n)
 {
-    for (int i = 0; i < arrayTable.GetLength(0); i++)
+    double[,] array = new double[m, n];
+    int min = -10;
+    int max = 10;
+
+    for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j < arrayTable.GetLength(1); j++)
+        for (int j = 0; j < n; j++)
         {
-            array[i, j] = random.NextDouble() * 10;
+            array[i, j] = new Random().NextDouble() * (max - min) + min;
+            array[i, j] = Math.Round(array[i, j], 1);
         }
     }
+    return array;
 }
 
 void PrintArray(double[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (var j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write("{0,6:F1}", array[i, j]);
+            Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
     }
