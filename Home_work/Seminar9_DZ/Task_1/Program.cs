@@ -15,9 +15,9 @@ void PrintNumbers(int number, int count)
         Console.Write(number);
         number--;
         if (number >= count)
-    {
-        Console.Write(", ");
-    }
+        {
+            Console.Write(", ");
+        }
         PrintNumbers(number, count);
     }
 }
