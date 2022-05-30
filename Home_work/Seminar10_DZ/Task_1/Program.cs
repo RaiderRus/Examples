@@ -24,14 +24,14 @@ void SimpleNumbersGroup(int n, int[,] baseArray)
             for (int j = 0; j < baseArray.GetLength(1); j++)
             {
                 if (baseArray[i, j] == 0)
-                {                         
+                {
                     baseArray[i, j] = k;
                     flag = true;
                     break;
                 }
                 else
                 {
-                    if (k % baseArray[i, j] == 0) break; 
+                    if (k % baseArray[i, j] == 0) break;
                 }
             }
             if (flag) break;
